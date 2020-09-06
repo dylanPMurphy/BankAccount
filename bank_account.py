@@ -1,6 +1,6 @@
 class BankAccount:
     def __init__(self, int_rate, balance):
-        self.int_rate = int_rate
+        self.int_rate = int_rate #must be less than 1
         self.balance = balance
 
 
@@ -25,4 +25,11 @@ class BankAccount:
     # yield_interest(self) - increases the account balance by the current balance * the interest rate (as long as the balance is positive)
 
     def yeildInterest(self):
+        if self.balance > 0:
+            self.balance = self.balance + self.balance*self.int_rate
         return self
+
+
+def testCases():
+    ba01 = BankAccount(324123.23,.03)
+    ba01.displayAccontInfo()
