@@ -17,8 +17,8 @@ class BankAccount:
         return  self
     # display_account_info(self) - print to the console: eg. "Balance: $100"
 
-    def displayAccontInfo(self):
-        print("Current Balance:" + str(self.balance) + " ---Current interest rate: "+str(self.int_rate))
+    def displayAccountInfo(self):
+        print("Current Balance: $ %.2f --- Current interest rate: %.2f%% "%(self.balance, self.int_rate*100))
         return  self
 
 
@@ -31,5 +31,7 @@ class BankAccount:
 
 
 def testCases():
-    ba01 = BankAccount(324123.23,.03)
-    ba01.displayAccontInfo()
+    ba01 = BankAccount(.03, 1000)
+    ba01.displayAccountInfo().yeildInterest().displayAccountInfo()
+
+testCases()
